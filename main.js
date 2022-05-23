@@ -5,25 +5,6 @@ scrn.tabIndex = 1;
 const SPACE_KEY = 32;
 const KEY_W = 87;
 const ARROWUP_KEY = 38;
-// scrn.addEventListener("click",()=>{
-// switch (state.curr) {
-//     case state.getReady :
-//         state.curr = state.Play;
-//         SFX.start.play();
-//         break;
-//     case state.Play :
-//         bird.flap();
-//         break;
-//     case state.gameOver :
-//         state.curr = state.getReady;
-//         bird.speed = 0;
-//         bird.y = 100;
-//         pipe.pipes=[];
-//         UI.score.curr = 0;
-//         SFX.played=false;
-//         break;
-// }
-// })
 
 scrn.onkeydown = function keyDown(e) {
     if (e.keyCode === SPACE_KEY || e.keyCode === KEY_W || e.keyCode === ARROWUP_KEY)   // Space Key or W key or arrow up
@@ -41,7 +22,7 @@ scrn.onkeydown = function keyDown(e) {
                 bird.speed = 0;
                 bird.y = 100;
                 pipe.pipes = [];
-                UI.score.curr = 0;
+                ui.score.curr = 0;
                 SFX.played = false;
                 break;
         }
@@ -352,4 +333,5 @@ function draw() {
     bird.draw();
     gnd.draw(scrn);
     ui.draw();
+    ui.drawScore(scrn);
 }

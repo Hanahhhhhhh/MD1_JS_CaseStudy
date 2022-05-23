@@ -99,7 +99,7 @@ class Bird {
                 }
 
             } else if (pipe.moved) {
-                UI.score.curr++;
+                ui.score.curr++;
                 SFX.score.play();
                 pipe.moved = false;
             }
