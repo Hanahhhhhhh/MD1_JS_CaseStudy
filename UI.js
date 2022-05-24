@@ -6,19 +6,17 @@ class UI {
         this.tx = tx
         this.ty = ty
         this.frame = frame
-        // this.curr =curr
-        // this.best =best
-        this.score= {
-         curr: 0,
-         best: 0,
-     }
+        this.score = {
+            curr: 0,
+            best: 0,
+        }
         this.getReady = {sprite: new Image()}
         this.gameOver = {sprite: new Image()}
         this.tap = [{sprite: new Image()},
             {sprite: new Image()}]
     }
-    draw()
-    {
+
+    draw() {
         switch (state.curr) {
             case state.getReady :
                 this.y = parseFloat(scrn.height - this.getReady.sprite.height) / 2;
@@ -40,8 +38,7 @@ class UI {
 
     }
 
-    drawScore(scrn)// draw score
-    {
+    drawScore(scrn) {
         sctx.fillStyle = "#FFFFFF";
         sctx.strokeStyle = "#000000";
         switch (state.curr) {
@@ -72,8 +69,7 @@ class UI {
         }
     }
 
-    update()
-    {
+    update() {
         if (state.curr === state.Play) return;
         this.frame += (frames % 10 === 0) ? 1 : 0;
         this.frame = this.frame % this.tap.length;

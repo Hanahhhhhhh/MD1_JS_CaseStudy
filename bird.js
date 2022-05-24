@@ -1,6 +1,5 @@
 class Bird {
     constructor(x, y, speed, gravity, thrust, frame, rotation) {
-        // this.image = image;
         this.x = x;
         this.y = y;
         this.speed = speed;
@@ -42,7 +41,7 @@ class Bird {
                 this.y += this.speed;
                 this.setRotation()
                 this.speed += this.gravity;
-                if (this.y + r >= gnd.y || this.collisioned()) {
+                if (this.y + r >= gnd.y || this.collision()) {
                     state.curr = state.gameOver;
                 }
 
@@ -82,7 +81,7 @@ class Bird {
             this.rotation = Math.min(90, 90 * this.speed / (this.thrust * 2));
         }
     }
-    collisioned(){
+    collision(){
         if (!pipe.pipes.length) return;
         let bird = this.animations[0].sprite;
         let x = pipe.pipes[0].x;

@@ -76,7 +76,7 @@ let gnd =new Gnd(0,0);
 //
 //     }
 // };
-let bg= new Bg(0,0)
+let bg= new Bg(0,140)
 
 // const pipe = {
 //     top: {sprite: new Image()},
@@ -108,8 +108,8 @@ let bg= new Bg(0,0)
 //     }
 //
 // };
-let pipe= new Pipe(85,true,[])
 
+let pipe= new Pipe(85,true,[])
 
 // const bird = {
 //     animations:
@@ -288,6 +288,8 @@ let bird= new Bird(50,100,0.1,0.3,3.8,0,0)
 //
 // };
 let ui= new UI(0,0,0,0,0,0)
+
+//img
 gnd.sprite.src = "img/ground.png";
 gnd.sprite.src = "img/ground.png";
 bg.sprite.src = "img/BG.png";
@@ -301,8 +303,7 @@ bird.animations[0].sprite.src = "img/bird/bird0.png";
 bird.animations[1].sprite.src = "img/bird/bird1.png";
 bird.animations[2].sprite.src = "img/bird/bird2.png";
 
-
-
+//audio
 SFX.start.src = "sfx/start/sfx_start.wav"
 SFX.flap.src = "sfx/flap/sfx_flap.wav"
 SFX.score.src = "sfx/score/sfx_score.wav"
