@@ -22,7 +22,7 @@ class Pipe {
         if (frames % 100 === 0) {
             this.pipes.push({x: parseFloat(scrn.width), y: -210 * Math.min(Math.random() + 1, 2)});
         }
-        this.pipes.forEach(pipe => {
+        this.pipes.forEach(function(pipe) {
             pipe.x -= dx;
         })
 

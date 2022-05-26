@@ -1,5 +1,5 @@
 class Gnd {
-    sprite
+    sprite;
     constructor(x, y) {
         this.sprite = new Image()
         this.x = x

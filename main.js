@@ -149,7 +149,7 @@ let pipe= new Pipe(85,true,[])
 //                 this.y += this.speed;
 //                 this.setRotation()
 //                 this.speed += this.gravity;
-//                 if (this.y + r >= gnd.y || this.collisioned()) {
+//                 if (this.y + r >= gnd.y || this.collision()) {
 //                     state.curr = state.gameOver;
 //                 }
 //
@@ -187,7 +187,7 @@ let pipe= new Pipe(85,true,[])
 //             this.rotation = Math.min(90, 90 * this.speed / (this.thrust * 2));
 //         }
 //     },
-//     collisioned: function () {
+//     collision: function () {
 //         if (!pipe.pipes.length) return;
 //         let bird = this.animations[0].sprite;
 //         let x = pipe.pipes[0].x;
@@ -288,6 +288,7 @@ let bird= new Bird(50,100,0.1,0.3,3.8,0,0)
 //
 // };
 let ui= new UI(0,0,0,0,0,0)
+let flapies= new Flappy(50,100,0.1,0.3,3.8,0,0)
 
 //img
 gnd.sprite.src = "img/ground.png";
@@ -302,6 +303,7 @@ ui.tap[1].sprite.src = "img/tap/tap1.png";
 bird.animations[0].sprite.src = "img/bird/bird0.png";
 bird.animations[1].sprite.src = "img/bird/bird1.png";
 bird.animations[2].sprite.src = "img/bird/bird2.png";
+flapies.sprite.src ="(img/flapies/flappy.png)";
 
 //audio
 SFX.start.src = "sfx/start/sfx_start.wav"
@@ -324,6 +326,7 @@ function update() {
     gnd.update();
     pipe.update();
     ui.update();
+
 }
 
 function draw() {
@@ -335,4 +338,5 @@ function draw() {
     gnd.draw(scrn);
     ui.draw();
     ui.drawScore(scrn);
+
 }
